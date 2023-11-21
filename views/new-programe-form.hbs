@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <br><br>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New Programe</li>
+            </ol>
+        </nav>
+    </div>
+<br>
+
+<form action="/create-Programe" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="code">Programe Code</label>
+                    <input type="text" id="code" name="code" class="form-control">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="name">Programe Name</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="cost">Programe Cost</label>
+                    <input type="number" id="cost" name="cost" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Technology
+                </button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button">Java</button></li>
+                <li><button class="dropdown-item" type="button">Spring</button></li>
+                <li><button class="dropdown-item" type="button">Angular</button></li>
+                <li><button class="dropdown-item" type="button">Node JS</button></li>
+                <li><button class="dropdown-item" type="button">React</button></li>
+                <li><button class="dropdown-item" type="button">PHP</button></li>
+                <li><button class="dropdown-item" type="button">MEAN Stack</button></li>
+                <li><button class="dropdown-item" type="button">MERN Stack</button></li>
+            </ul>
+            </div>
+            </div>
+   
+            <div class="col-4">
+                <br>
+                <button type="submit" class="btn btn-primary col-12" style="margin-left: 70px;">Save Programe</button>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+</body>
+</html>
