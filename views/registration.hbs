@@ -1,38 +1,79 @@
 <br><h1 style="display: flex; justify-content:center; color:rgb(39, 60, 117)">New Registration</h1><br>
 
-  <br>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <br><br>
 
-  <form class="d-flex" role="search" action="" method="post">
-        <input class="form-control me-2" name="text"
-         type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-<br><br>
+<form action="/create-student" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="nic">Registration ID</label>
+                    <input type="text" id="nic" name="nic" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name">Student ID</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="address">Programe Name</label><br>
+                    <div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+   Select Programe
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">MERN Stack</a></li>
+    <li><a class="dropdown-item" href="#">MEAN Stack</a></li>
+    <li><a class="dropdown-item" href="#">Java</a></li>
+    <li><a class="dropdown-item" href="#">Angular with SpringBoot</a></li>
+    <li><a class="dropdown-item" href="#">React</a></li>
+    <li><a class="dropdown-item" href="#">Web Development</a></li>
+    <li><a class="dropdown-item" href="#">GIT | GITUB</a></li>
+    <li><a class="dropdown-item" href="#">DevOps</a></li>
+  </ul>
+</div>
+                </div>
+            </div>
+            <br><br><br><br>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="address">Payment State</label>
+                    <br><br>
+                    <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Paid</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Pending</label>
+                </div>
+                </div>
+            </div><br><br><br><br>
+            <div class="col-4">
+                <br>
+               <a href="#" class="btn btn-warning active" role="button" data-bs-toggle="button" aria-pressed="true" style="font-size:20px; width:200px">Register</a>
+            </div>
+        </div>
+    </div>
+</form>
+    
 
-<table class="table-bordered table table-hover">
-    <thead>
-        <tr>
-            <th>Registration ID</th>
-            <th>Student</th>
-            <th>Programe</th>
-            <th>Payment</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each rows}}
-        <tr>
-            <td>{{this.id}}</td>
-            <td>{{this.student}}</td>
-            <td>{{this.programe}}</td>
-            <td>{{this.payment}}</td>
-            <td>
-                <a href="#" class="btn btn-primary">Show Data</a>&nbsp;
-                <a href="/delete-registration/{{this.id}}" class="btn btn-danger">Delete</a>&nbsp;
-                <a href="/update-registration/{{this.id}}" class="btn btn-warning">Update</a>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+</body>
+</html>
 
-<hr>
+
+     
+    
+
+

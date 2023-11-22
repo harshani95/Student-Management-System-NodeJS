@@ -10,25 +10,25 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/student">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">New Student</li>
             </ol>
         </nav>
     </div>
-<br>
+<br><br>
 
 <form action="/create-student" method="post">
     <div class="container">
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
-                    <label for="nic">NIC</label>
-                    <input type="text" id="nic" name="nic" class="form-control">
+                    <label for="nic">Student ID</label>
+                    <input type="text" id="nic" name="nic" class="form-control" placeholder="S001">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control">
                 </div>
             </div>
@@ -44,9 +44,10 @@
                     <input type="text" id="contact" name="contact" class="form-control">
                 </div>
             </div>
+            <br>
             <div class="col-4">
                 <br>
-                <button type="submit" class="btn btn-primary col-12" style="margin-left: 70px;">Save Student</button>
+                <button type="submit" class="btn btn-primary col-12" style="margin-left: 70px; font-size:20px">Save Student</button>
             </div>
         </div>
     </div>

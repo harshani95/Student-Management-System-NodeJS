@@ -17,7 +17,7 @@ const initializeUi=(req,resp)=>{
                  console.log(err);
              }
 
-             console.log(rows);
+            //  console.log(rows);
 
          });
 
@@ -67,11 +67,11 @@ const initializeUi=(req,resp)=>{
             [student_id,name,address,contact],(err,rows)=>{
                 connection.release();
                 if(!err){
-                    resp.render('new-student-form');
+                    resp.render('/student');
                 }else{
                     console.log(err);
                 }
-                console.log(rows);
+                console.log("Successfully Created");
             });
         });
     }
@@ -87,9 +87,8 @@ const initializeUi=(req,resp)=>{
     
             connection.query('UPDATE student SET name=?, address=?, contact=? WHERE student_id=?',
             [name,address,contact,student_id],(err,rows)=>{
-                connection.release();
                 if(!err){
-                    resp.render('/student');
+                    resp.render('new-student-form');
                 }else{
                     console.log(err);
                 }

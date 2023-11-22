@@ -18,10 +18,11 @@ CREATE TABLE IF NOT EXISTS programe(
 CREATE TABLE IF NOT EXISTS registration(
     reg_id VARCHAR(20) PRIMARY KEY,
     reg_date DATE,
+    payment_completness BOOLEAN,
     student_id VARCHAR(20),
     programe_id VARCHAR(20),
-    CONSTRAINT FOREIGN KEY (student_id) REFERENCES student(student_id),
-    CONSTRAINT FOREIGN KEY (programe_id) REFERENCES programe(programe_id)
+    CONSTRAINT FOREIGN KEY (student_id) REFERENCES student(student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (programe_id) REFERENCES programe(programe_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 SHOW TABLES;
@@ -31,22 +32,22 @@ DESC programe;
 DESC registration;
 
 INSERT INTO student VALUES
-('S001','Kamal','Colombo','7788'),
-('S002','Jagath','Kalutara','56455'),
-('S003','Wasantha','Panadura','675');
+('S001','Kamal Perera','Colombo','077-8812945'),
+('S002','Anura Herat','Kalutara','071-5645500'),
+('S003','Wasantha Kumara','Panadura','076-6751128');
 
 SELECT * FROM student;
 
 INSERT INTO programe VALUES
 ('P001','Java', 5000),
-('P002','MERN', 5000),
-('P003','Full Stack', 20000);
+('P002','MERN Stack', 5000),
+('P003','GIT | GITHUB ', 10000);
 
 SELECT * FROM programe;
 
 INSERT INTO registration VALUES
-('REG-001','2023-01-18','S001','P001'),
-('REG-002','2023-02-18','S001','P002'),
-('REG-003','2023-02-12','S003','P002');
+('REG-001','2023-01-18',true,'S001','P001'),
+('REG-002','2023-02-18',true,'S001','P002'),
+('REG-003','2023-02-12',false,'S003','P002');
 
 SELECT * FROM registration;

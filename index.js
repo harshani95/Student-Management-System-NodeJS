@@ -19,7 +19,7 @@ const LoginRouter = require('./routes//LoginRoute');
 const SignUpRouter = require('./routes/SignUpRoute');
 const StudentRouter = require('./routes/StudentRoute');
 const ProgrameRouter = require('./routes/ProgrameRoute');
-const ReistrationRouter = require('./routes/RegistrationRoute');
+const RegistrationRouter = require('./routes/RegistrationRoute');
 //===================
 
 
@@ -33,12 +33,12 @@ app.set('view engine', '.hbs');
 //     resp.render('home'); 
 // }); 
 
- app.use('/',HomeRouter);
+app.use('/',HomeRouter);
 app.use('/login',LoginRouter);
 app.use('/signup',SignUpRouter);
 app.use('/student',StudentRouter);
 app.use('/programe',ProgrameRouter);
-app.use('/registration',ReistrationRouter);
+app.use('/registration',RegistrationRouter);
 
 app.listen(serverPort,()=>{
     console.log(`Server Started & Running on port ${serverPort}`);

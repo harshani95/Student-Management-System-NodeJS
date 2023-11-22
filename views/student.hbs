@@ -1,18 +1,19 @@
 <br>
     <h1 style="display: flex; justify-content:center; color:rgb(39, 60, 117)">Student Management</h1><br>
-  <a href="/new-student-form">
-    <p class="d-inline-flex gap-1">
-  <button type="button" class="btn btn-primary" data-bs-toggle="button">+ New Student</button>
-</p>
-  </a>
-  <br>
+ 
+ 
+    <a class="nav-link" href="/student/new-student-form">
+        <button class="btn btn-primary me-md-2" type="button">+ New Student</button>
+    </a>
+        <br>
+
 
   <form class="d-flex" role="search" action="" method="post">
         <input class="form-control me-2" name="text"
          type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-<br><br>
+<br>
 
 <table class="table-bordered table table-hover">
     <thead>
@@ -32,13 +33,12 @@
             <td>{{this.address}}</td>
             <td>{{this.contact}}</td>
             <td>
-                <a href="#" class="btn btn-primary">Show Data</a>&nbsp;
-                <a href="/delete-student/{{this.nic}}" class="btn btn-danger">Delete</a>&nbsp;
-                <a href="/update-student/{{this.nic}}" class="btn btn-warning">Update</a>
+            
+                <a href="/student/delete-student/{{student_id}}" class="btn btn-danger">Delete</a>&nbsp;
+                <a href="/student/update-student/{{student_id}}" class="btn btn-warning">Update</a>
             </td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 
-<hr>
