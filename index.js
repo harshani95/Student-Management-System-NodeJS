@@ -15,8 +15,6 @@ app.use(bodyParser.json());
 
 //===================
 const HomeRouter = require('./routes/HomeRoute');
-const LoginRouter = require('./routes//LoginRoute');
-const SignUpRouter = require('./routes/SignUpRoute');
 const StudentRouter = require('./routes/StudentRoute');
 const ProgrameRouter = require('./routes/ProgrameRoute');
 const RegistrationRouter = require('./routes/RegistrationRoute');
@@ -34,8 +32,6 @@ app.set('view engine', '.hbs');
 // }); 
 
 app.use('/',HomeRouter);
-app.use('/login',LoginRouter);
-app.use('/signup',SignUpRouter);
 app.use('/student',StudentRouter);
 app.use('/programe',ProgrameRouter);
 app.use('/registration',RegistrationRouter);

@@ -17,7 +17,7 @@ const initializeUi=(req,resp)=>{
                  console.log(err);
              }
 
-            //  console.log(rows);
+              console.log(rows);
 
          });
 
@@ -67,11 +67,32 @@ const initializeUi=(req,resp)=>{
             [student_id,name,address,contact],(err,rows)=>{
                 connection.release();
                 if(!err){
-                    resp.render('/student');
+                    resp.render('student');
+                    resp.send("Successfully Created");
                 }else{
                     console.log(err);
                 }
-                console.log("Successfully Created");
+                console.log(rows);
+            });
+        });
+    }
+    
+    
+    const updateStudentForm=(req,resp)=>{
+        connectionPool.getConnection((error, connection)=>{
+            if(error){
+                throw error;
+            }
+            connection.query('SELECT * FROM student WHERE student_id=?',
+            [req.params.student_id],(err,rows)=>{
+                connection.release();
+                const data =rows[0];
+                if(!err){
+                    resp.render('update-student-form',{student:data});
+                }else{
+                    console.log(err);
+                }
+                console.log(rows[0]);
             });
         });
     }
@@ -87,8 +108,10 @@ const initializeUi=(req,resp)=>{
     
             connection.query('UPDATE student SET name=?, address=?, contact=? WHERE student_id=?',
             [name,address,contact,student_id],(err,rows)=>{
+                connection.release();
                 if(!err){
-                    resp.render('new-student-form');
+                    resp.render('student');
+                    resp.send("Successfully Updated");
                 }else{
                     console.log(err);
                 }
@@ -120,6 +143,7 @@ const initializeUi=(req,resp)=>{
         studentForm,
         findStudents,
         newStudentForm,
+        updateStudentForm,
         createStudent,
         updateStudent,
         deleteStudent  

@@ -63,11 +63,12 @@ const initializeUi=(req,resp)=>{
     
             const {programe_id, name, cost} = req.body;
     
-            connection.query('INSERT INTO programe VALUES(?,?,?,?)',
+            connection.query('INSERT INTO programe VALUES(?,?,?)',
             [programe_id, name, cost],(err,rows)=>{
                 connection.release();
                 if(!err){
                     resp.render('new-programe-form');
+                    resp.send("Successfully Created");
                 }else{
                     console.log(err);
                 }
@@ -77,19 +78,17 @@ const initializeUi=(req,resp)=>{
     }
     
     
-    const updatePrograme=(req,resp)=>{
+    const updateProgrameForm=(req,resp)=>{
         connectionPool.getConnection((error, connection)=>{
             if(error){
                 throw error;
             }
-    
-            const {programe_id, name, cost} = req.body;
-    
-            connection.query('UPDATE programe SET name=?, cost=? WHERE programe_id=?',
-            [programe_id, name, cost],(err,rows)=>{
+            connection.query('SELECT * FROM programe WHERE programe_id=?',
+            [req.params.programe_id],(err,rows)=>{
                 connection.release();
+                const data =rows[0];
                 if(!err){
-                    resp.render('/programe');
+                    resp.render('update-programe-form',{programe:data});
                 }else{
                     console.log(err);
                 }
@@ -97,7 +96,28 @@ const initializeUi=(req,resp)=>{
             });
         });
     }
+     
+    const updatePrograme=(req,resp)=>{
+        connectionPool.getConnection((error, connection)=>{
+            if(error){
+                throw error;
+            }
     
+            const {programe_id,name,cost} = req.body;
+    
+            connection.query('UPDATE programe SET name=?, cost=? WHERE programe_id=?',
+            [name,cost,programe_id],(err,rows)=>{
+                connection.release();
+                if(!err){
+                    resp.render('programe');
+                    resp.send("Successfully Updated");
+                }else{
+                    console.log(err);
+                }
+                console.log(rows[0]);
+            });
+        });
+    }
     
     const deletePrograme=(req,resp)=>{
         connectionPool.getConnection((error, connection)=>{
@@ -123,6 +143,7 @@ const initializeUi=(req,resp)=>{
         newProgrameForm,
         createPrograme,
         updatePrograme,
+        updateProgrameForm,
         deletePrograme  
     }
     

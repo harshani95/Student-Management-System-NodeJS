@@ -1,3 +1,5 @@
+
+
 <br><h1 style="display: flex; justify-content:center; color:rgb(39, 60, 117)">New Registration</h1><br>
 
    <!DOCTYPE html>
@@ -8,47 +10,40 @@
     <title>Document</title>
 </head>
 <body>
-  <br><br>
+  
+<br><br>
 
-<form action="/create-student" method="post">
+<form action="/registration/create-registration" method="post">
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="form-group">
-                    <label for="nic">Registration ID</label>
-                    <input type="text" id="nic" name="nic" class="form-control">
+                    <label for="reg_id">Registration ID</label>
+                    <input type="text" id="reg_id" name="reg_id" class="form-control" placeholder="REG-001">
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="form-group">
-                    <label for="name">Student ID</label>
-                    <input type="text" id="name" name="name" class="form-control">
+                    <label for="date"> Date</label>
+                    <input type="date" id="date" name="date" class="form-control" >
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="form-group">
-                    <label for="address">Programe Name</label><br>
-                    <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-   Select Programe
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">MERN Stack</a></li>
-    <li><a class="dropdown-item" href="#">MEAN Stack</a></li>
-    <li><a class="dropdown-item" href="#">Java</a></li>
-    <li><a class="dropdown-item" href="#">Angular with SpringBoot</a></li>
-    <li><a class="dropdown-item" href="#">React</a></li>
-    <li><a class="dropdown-item" href="#">Web Development</a></li>
-    <li><a class="dropdown-item" href="#">GIT | GITUB</a></li>
-    <li><a class="dropdown-item" href="#">DevOps</a></li>
-  </ul>
-</div>
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" class="form-control">
                 </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="programe_id">Programe ID</label><br>
+                    <input type="text" id="programe_id" name="programe_id" class="form-control">
+                    </div>
             </div>
             <br><br><br><br>
-            <div class="col-6">
+            {{!-- <div class="col-6">
                 <div class="form-group">
-                    <label for="address">Payment State</label>
+                    <label for="payment">Payment State</label>
                     <br><br>
                     <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -59,14 +54,20 @@
                 <label class="form-check-label" for="inlineRadio2">Pending</label>
                 </div>
                 </div>
-            </div><br><br><br><br>
+            </div><br><br><br><br> --}}
             <div class="col-4">
                 <br>
-               <a href="#" class="btn btn-warning active" role="button" data-bs-toggle="button" aria-pressed="true" style="font-size:20px; width:200px">Register</a>
+              
+        <button class="btn btn-warning me-md-2" type="submit" style="font-size:20px; width:200px;">Register</button>
             </div>
         </div>
     </div>
 </form>
+
+        <a href="/registration/registration-list">
+         <button class="btn btn-success me-md-2" type="button" style="font-size:20px; width:200px; margin-top:30px; margin-left:150px;">Show All Data</button>
+        </a>
+        
     
 
 </body>
@@ -74,6 +75,5 @@
 
 
      
-    
 
 
