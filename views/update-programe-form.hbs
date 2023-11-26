@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <br><br>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/programe">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Update Programe</li>
+            </ol>
+        </nav>
+    </div>
+<br><br>
+
+<form action="/programe/update-programe" method="post">
+     <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="programe_id">Programe Code</label>
+                    <input type="text" id="programe_id" name="programe_id" class="form-control"  value="{{this.programe.programe_id}}">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name">Programe Name</label>
+                    <input type="text" id="name" name="name" class="form-control" value="{{this.programe.name}}">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="cost">Programe Cost</label>
+                    <input type="number" id="cost" name="cost" class="form-control" value="{{this.programe.cost}}">
+                </div>
+            </div>
+            <br>
+            <div class="col-4">
+                <br>
+                <button type="submit" class="btn btn-primary col-12" style="margin-left: 70px; font-size:20px">Update Programe</button>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+</body>
+</html>

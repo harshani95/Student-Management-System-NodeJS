@@ -1,0 +1,34 @@
+
+<br>
+ <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/registration">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Registration Details</li>
+            </ol>
+        </nav>
+    </div>
+<br>
+<table class="table-bordered table table-hover">
+    <thead>
+        <tr>
+            <th>Registration ID</th>
+            <th>Register Date</th>
+            <th>Student ID</th>
+            <th>Programe ID</th>
+            {{!-- <th>Payment State</th> --}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <td>{{this.reg_id}}</td>
+            <td>{{this.reg_date}}</td>
+            <td>{{this.student_id}}</td>
+            <td>{{this.programe_id}}</td>
+            {{!-- <td>{{this.payment}}</td> --}}
+        
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

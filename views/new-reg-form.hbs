@@ -1,0 +1,32 @@
+
+<br>
+<h1 style="display: flex; justify-content:center; color:rgb(39, 60, 117)">Registration Management</h1><br>
+
+  <a class="nav-link" href="/registration/new-reg-form">
+        <button class="btn btn-primary me-md-2" type="button">+ New Registration</button>
+    </a>
+        <br>
+
+<table class="table-bordered table table-hover">
+    <thead>
+        <tr>
+            <th>Registration ID</th>
+            <th>Register Date</th>
+            <th>Student ID</th>
+            <th>Programe ID</th>
+            {{!-- <th>Payment State</th> --}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <td>{{this.reg_id}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.student_id}}</td>
+            <td>{{this.programe_id}}</td>
+            {{!-- <td>{{this.payment}}</td> --}}
+        
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

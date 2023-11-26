@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <br><br>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/student">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Update Student</li>
+            </ol>
+        </nav>
+    </div>
+<br><br>
+
+<form action="/student/update-student" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" class="form-control" placeholder="S001" value="{{this.student.student_id}}">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control"  value="{{this.student.name}}">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" class="form-control"value="{{this.student.address}}">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="text" id="contact" name="contact" class="form-control"value="{{this.student.contact}}">
+                </div>
+            </div>
+            <br>
+            <div class="col-4">
+                <br>
+                <button type="submit" class="btn btn-primary col-12" style="margin-left: 70px; font-size:20px">Update Student</button>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+</body>
+</html>
