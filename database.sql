@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS node_institute;
 CREATE DATABASE IF NOT EXISTS node_institute;
 USE  node_institute;
+
 #=============================
 CREATE TABLE IF NOT EXISTS student(
     student_id VARCHAR(20) PRIMARY KEY ,
@@ -43,7 +44,6 @@ INSERT INTO programe VALUES
 ('P002','MERN Stack', 15000),
 ('P003','GIT | GITHUB ', 10000),
 ('P004','Spring Boot', 20000);
-
 
 SELECT * FROM programe;
 
